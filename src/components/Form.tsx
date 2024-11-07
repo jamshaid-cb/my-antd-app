@@ -64,6 +64,7 @@ const CustomForm: React.FC = () => {
   return (
     <Form
       {...formItemLayout}
+      layout="vertical"
       onValuesChange={onFormVariantChange}
       variant={componentVariant}
       style={{ maxWidth: 600 }}

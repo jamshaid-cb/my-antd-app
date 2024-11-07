@@ -144,7 +144,7 @@ export const antdThemeConfig = {
     linkHoverDecoration: "underline",
 
     // Spacing settings (for paddings/margins)
-    paddingXS: 4,
+    paddingXS: 6,
     paddingSM: 8,
     paddingMD: 12,
     paddingLG: 20,
@@ -190,7 +190,30 @@ export const antdThemeConfig = {
       borderColorDisabled: "transparent",
     },
 
-    Input: {},
+    Input: {
+      paddingBlock: 8,
+      paddingInline: 10,
+    },
+
+    InputNumber: {
+      paddingBlock: 8,
+      paddingInline: 10,
+    },
+
+    TextArea: {
+      paddingBlock: 8,
+      paddingInline: 10,
+    },
+
+    DatePicker: {
+      paddingBlock: 8,
+      paddingInline: 10,
+    },
+
+    RangePicker: {
+      paddingBlock: 8,
+      paddingInline: 10,
+    },
 
     Table: {
       headerBg: palette.gray.light,

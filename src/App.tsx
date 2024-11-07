@@ -65,7 +65,13 @@ const App: React.FC = () => {
 
       <div style={{ width: "100%", background: "white" }}>
         <div style={{ width: "80%", marginInline: "auto" }}>
-          <ShowcaseTable />
+          <ShowcaseTable bordered={true} />
+        </div>
+      </div>
+
+      <div style={{ width: "100%", background: "white", marginTop: "80px" }}>
+        <div style={{ width: "80%", marginInline: "auto" }}>
+          <ShowcaseTable bordered={false} />
         </div>
       </div>
 

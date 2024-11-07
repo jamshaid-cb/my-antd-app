@@ -22,7 +22,7 @@ interface DataType {
   children?: DataType[];
 }
 
-const TransactionsTable = () => {
+const TransactionsTable = ({ bordered }: { bordered: boolean }) => {
   const [searchText, setSearchText] = useState("");
   const [searchedColumn, setSearchedColumn] = useState("");
   const searchInput = useRef<InputRef>(null);
@@ -175,6 +175,7 @@ const TransactionsTable = () => {
       dataIndex: "amount",
       key: "amount",
       ...getColumnSearchProps("amount"),
+      align: "right",
     },
     {
       title: "Loan Outstanding",
@@ -272,6 +273,7 @@ const TransactionsTable = () => {
       <Table
         columns={columns}
         dataSource={data}
+        bordered={bordered}
         pagination={{
           pageSize: 10,
           showSizeChanger: true,
