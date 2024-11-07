@@ -11,6 +11,12 @@ const SectionCheckboxRadio: React.FC = () => (
       <Space direction="vertical">
         <Checkbox>Checkbox Label</Checkbox>
         <Checkbox checked>Checked Checkbox</Checkbox>
+        <Checkbox checked disabled>
+          Disabled Checkbox
+        </Checkbox>
+        <Checkbox indeterminate disabled>
+          Disabled Checkbox
+        </Checkbox>
         <Checkbox disabled>Disabled Checkbox</Checkbox>
       </Space>
       <Space direction="vertical">

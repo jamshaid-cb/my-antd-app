@@ -41,16 +41,39 @@ const palette = {
   black: {
     main: "#08081A",
     light: "#74748A",
-    dark: "#08081A",
   },
   white: {
-    main: "#ffffff",
+    main: "#FEFEFE",
   },
 
-  background: { paper: "#fff", default: "#fff" },
+  background: { paper: "#FEFEFE", default: "#fff" },
+};
+
+const boxShadows = {
+  button: {
+    hover: "0px 2px 6px 0px #4714872B",
+    danger: "0px 2px 6px 0px #6D08212B",
+  },
+  dropdown: {
+    main: "0px 2px 8px 0px #08081A1A",
+  },
+  modal: {
+    main: "0px 4px 12px 0px #0000001A",
+  },
+  snackbar: {
+    main: "0px 2px 2px 0px #0000000F",
+  },
+  navigation: {
+    main: "0px 2px 6px 0px #00105E14",
+  },
+  topbar: {
+    main: "0px 1px 4px 0px #08081A0A",
+  },
 };
 
 export const antdThemeConfig = {
+  cssVar: true,
+  hashed: false,
   token: {
     // Color settings
     colorError: palette.red.main,
@@ -80,14 +103,23 @@ export const antdThemeConfig = {
     colorPrimaryActive: palette.primary.dark,
     colorPrimaryBg: palette.primary.accent,
     colorPrimaryBgHover: palette.primary.dark,
-    colorPrimaryBorder: palette.primary.main,
-    colorPrimaryBorderHover: palette.primary.light,
+    colorPrimaryBorder: palette.primary.bright,
+    colorPrimaryBorderHover: palette.primary.dark,
     colorPrimaryTextActive: palette.primary.main,
     colorPrimaryTextHover: palette.primary.dark,
 
+    colorText: palette.black.main,
+    colorTextDisabled: palette.gray.main,
+    colorTextSecondary: palette.gray.main,
+    colorTextTertiary: palette.gray.main,
+
+    // Box Shadow setting
+
     // Typography settings
-    fontFamily: "Poppins, sans-serif",
+    fontFamily: "Inter, sans-serif",
     lineHeight: 1.4,
+    lineHeightLG: 1.4,
+    lineHeightSM: 1.4,
 
     // Font sizes
     fontSize: 14,
@@ -105,8 +137,11 @@ export const antdThemeConfig = {
     // Border radius
     borderRadiusBase: 6,
     borderRadius: 6,
-    borderRadiusLG: 12,
-    borderRadiusSM: 4,
+    borderRadiusLG: 8,
+    borderRadiusSM: 6,
+
+    lineWidthFocus: 1,
+    linkHoverDecoration: "underline",
 
     // Spacing settings (for paddings/margins)
     paddingXS: 4,
@@ -115,30 +150,63 @@ export const antdThemeConfig = {
     paddingLG: 20,
     paddingXL: 24,
     paddingXXL: 32,
-  },
 
+    marginXS: 12,
+  },
   components: {
     Button: {
       fontWeight: 600,
-      paddingInline: 15,
+      // Padding settings
+      paddingInline: 20,
       paddingInlineLG: 20,
       paddingInlineSM: 10,
+      paddingBlock: 10,
+      paddingBlockLG: 12,
+      paddingBlockSM: 8,
+
+      // Text Sizes
+      contentFontSizeSM: 12,
+      contentFontSize: 14,
+
+      //  Button shadows
+      defaultShadow: boxShadows.button.hover,
+      primaryShadow: boxShadows.button.hover,
+      dangerShadow: boxShadows.button.danger,
+
       textTextActiveColor: palette.primary.main,
       textTextColor: palette.primary.main,
       textTextHoverColor: palette.primary.dark,
 
-      //   Default button
+      //   Default button Color
       defaultColor: palette.primary.main,
       defaultHoverColor: palette.primary.dark,
       defaultBorderColor: palette.primary.light,
       defaultHoverBorderColor: palette.primary.light,
       defaultHoverBg: palette.primary.accent,
 
-      //   Danger button
+      //   Danger button Color
       dangerColor: palette.white.main,
+
+      borderColorDisabled: "transparent",
     },
 
     Input: {},
+
+    Table: {
+      headerBg: palette.gray.light,
+      rowExpandedBg: palette.secondary.accent,
+      rowHoverBg: palette.secondary.accent,
+      rowSelectedBg: palette.secondary.accent,
+      headerSplitColor: palette.gray.dark,
+      headerBorderRadius: 6,
+      cellPaddingBlockMD: 13,
+      cellPaddingInlineMD: 16,
+      stickyScrollBarBg: palette.gray.light,
+    },
+
+    Modal: {
+      titleFontSize: 20,
+    },
   },
 
   overrides: {},

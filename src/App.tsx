@@ -15,6 +15,7 @@ import SectionButtons from "./components/Buttons";
 import SectionCheckboxRadio from "./components/CheckboxRadio";
 import SectionCard from "./components/Card";
 import SectionInput from "./components/Inputs";
+import ShowcaseTable from "./components/ShowcaseTable";
 
 const { Title, Paragraph } = Typography;
 
@@ -60,6 +61,12 @@ const App: React.FC = () => {
           <Alerts />
           <Tables />
         </Space>
+      </div>
+
+      <div style={{ width: "100%", background: "white" }}>
+        <div style={{ width: "80%", marginInline: "auto" }}>
+          <ShowcaseTable />
+        </div>
       </div>
 
       <Title level={2} style={{ color: antdThemeConfig.token.colorPrimary }}>

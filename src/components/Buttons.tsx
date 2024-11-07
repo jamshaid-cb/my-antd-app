@@ -1,7 +1,9 @@
 import React, { useState } from "react";
-import { Button, Card, Space } from "antd";
+import { Button, Card, Space, Typography } from "antd";
 
 import { SearchOutlined } from "@ant-design/icons";
+import Link from "antd/es/typography/Link";
+const { Text } = Typography;
 
 const SectionButtons: React.FC = () => {
   const [loading, setLoading] = useState(false);
@@ -17,7 +19,9 @@ const SectionButtons: React.FC = () => {
           <Button type="primary">Primary Button</Button>
           <Button type="default">Secondary Button</Button>
           <Button type="text">Tertiary Button</Button>
-          <Button type="link">Link Button</Button>
+          <Link strong href="#">
+            Link Button
+          </Link>
           <Button danger type="primary">
             Danger Button
           </Button>
@@ -45,6 +49,61 @@ const SectionButtons: React.FC = () => {
             Tertiary Disabled
           </Button>
           <Button type="link" disabled>
+            Link Disabled
+          </Button>
+        </Space>
+
+        {/* Small */}
+        <hr />
+        <Text>Small Buttons</Text>
+        <Space wrap>
+          <Button size="small" type="primary">
+            Primary Button
+          </Button>
+          <Button size="small" type="default">
+            Secondary Button
+          </Button>
+          <Button size="small" type="text">
+            Tertiary Button
+          </Button>
+          <Button size="small" type="link">
+            Link Button
+          </Button>
+          <Button size="small" danger type="primary">
+            Danger Button
+          </Button>
+          <Button size="small" type="dashed">
+            Dashed
+          </Button>
+          <Button size="small" icon={<SearchOutlined />} type="default">
+            Search
+          </Button>
+          <Button
+            size="small"
+            icon={<SearchOutlined />}
+            type="primary"
+            shape="circle"
+          />
+          <Button
+            size="small"
+            type="primary"
+            loading={loading}
+            onClick={() => setLoading(!loading)}
+          >
+            Start Loading!
+          </Button>
+        </Space>
+        <Space wrap>
+          <Button size="small" type="primary" disabled>
+            Primary Disabled
+          </Button>
+          <Button size="small" type="default" disabled>
+            Secondary Disabled
+          </Button>
+          <Button size="small" type="text" disabled>
+            Tertiary Disabled
+          </Button>
+          <Button size="small" type="link" disabled>
             Link Disabled
           </Button>
         </Space>
