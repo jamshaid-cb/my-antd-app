@@ -2,13 +2,11 @@ import { Button, Card, Row, Col, Divider, Typography, Flex } from "antd";
 import { CheckCircleOutlined } from "@ant-design/icons";
 
 import usePdfViewer from "../../hooks/usePdfViewer";
+import pdfFile from "../../assets/data.pdf";
 
 const { Text } = Typography;
 const FinancialDocs = () => {
-  const file =
-    "https://cb-lending-staging.s3.ap-southeast-1.amazonaws.com/Transaction-Receipt-Loan-SP-KQ3JF3-01-10-2024-1730189137475-1.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIA2HE4366GYZCBJV45%2F20241111%2Fap-southeast-1%2Fs3%2Faws4_request&X-Amz-Date=20241111T180031Z&X-Amz-Expires=3600&X-Amz-Signature=09a3657baba683ad77b9844d2c3d8e9d16d2f61a7a0d03e5f14a2ca23e83c7f0&X-Amz-SignedHeaders=host&x-id=GetObject";
-
-  const { PdfViewer, ControlBar } = usePdfViewer({ file });
+  const { PdfViewer, ControlBar } = usePdfViewer({ file: pdfFile });
 
   return (
     <Card
