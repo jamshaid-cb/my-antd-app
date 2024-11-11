@@ -1,4 +1,4 @@
-const palette = {
+export const palette = {
   primary: {
     main: "#845EB3",
     light: "#C3A6E7",
@@ -45,7 +45,6 @@ const palette = {
   white: {
     main: "#FEFEFE",
   },
-
   background: { paper: "#FEFEFE", default: "#fff" },
 };
 
@@ -72,7 +71,7 @@ const boxShadows = {
 };
 
 export const antdThemeConfig = {
-  cssVar: true,
+  // cssVar: true,
   hashed: false,
   token: {
     // Color settings
@@ -114,9 +113,10 @@ export const antdThemeConfig = {
     colorTextTertiary: palette.gray.main,
 
     // Box Shadow setting
+    boxShadowTertiary: boxShadows.topbar.main,
 
     // Typography settings
-    fontFamily: "Inter, sans-serif",
+    fontFamily: "Inter, Poppins, sans-serif",
     lineHeight: 1.4,
     lineHeightLG: 1.4,
     lineHeightSM: 1.4,
@@ -152,6 +152,9 @@ export const antdThemeConfig = {
     paddingXXL: 32,
 
     marginXS: 12,
+
+    // Custom Variable in Theme
+    palette,
   },
   components: {
     Button: {
@@ -217,6 +220,7 @@ export const antdThemeConfig = {
 
     Table: {
       headerBg: palette.gray.light,
+      borderColor: "#e8e8eb",
       rowExpandedBg: palette.secondary.accent,
       rowHoverBg: palette.secondary.accent,
       rowSelectedBg: palette.secondary.accent,
@@ -227,8 +231,20 @@ export const antdThemeConfig = {
       stickyScrollBarBg: palette.gray.light,
     },
 
+    Tag: {},
+
+    Typography: {
+      titleMarginTop: 15,
+      titleMarginBottom: 10,
+    },
+
     Modal: {
       titleFontSize: 20,
+    },
+
+    Anchor: {
+      linkPaddingBlock: 6,
+      linkPaddingInlineStart: 14,
     },
   },
 
