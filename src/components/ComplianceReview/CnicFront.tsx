@@ -11,7 +11,7 @@ import {
   Form,
   DatePicker,
 } from "antd";
-import { CheckCircleOutlined } from "@ant-design/icons";
+import { CheckCircleOutlined, SearchOutlined } from "@ant-design/icons";
 
 const { Text } = Typography;
 
@@ -38,6 +38,8 @@ const CnicFront = () => {
               rules={[
                 { required: true, message: "Please enter your full name" },
               ]}
+              hasFeedback
+              validateStatus="success"
             >
               <Input defaultValue="Shahid Khan" />
             </Form.Item>
@@ -52,7 +54,7 @@ const CnicFront = () => {
                 },
               ]}
             >
-              <Input defaultValue="Abdullah Khan" />
+              <Input prefix={<SearchOutlined />} defaultValue="Abdullah Khan" />
             </Form.Item>
             <Flex gap={20}>
               <Form.Item
@@ -61,6 +63,9 @@ const CnicFront = () => {
                 rules={[
                   { required: true, message: "Please enter your CNIC number" },
                 ]}
+                hasFeedback
+                validateStatus="success"
+                style={{ width: "100%" }}
               >
                 <Input defaultValue="42201-0145564-2" />
               </Form.Item>
@@ -74,8 +79,9 @@ const CnicFront = () => {
                     message: "Please enter your date of birth",
                   },
                 ]}
+                style={{ width: "100%" }}
               >
-                <Input defaultValue="12/05/1986" />
+                <DatePicker style={{ width: "100%" }} />
               </Form.Item>
             </Flex>
             <Flex gap={20}>
@@ -85,8 +91,9 @@ const CnicFront = () => {
                 rules={[
                   { required: true, message: "Please enter the date of issue" },
                 ]}
+                style={{ width: "100%" }}
               >
-                <DatePicker />
+                <DatePicker style={{ width: "100%" }} />
               </Form.Item>
 
               <Form.Item
@@ -98,8 +105,9 @@ const CnicFront = () => {
                     message: "Please enter the date of expiry",
                   },
                 ]}
+                style={{ width: "100%" }}
               >
-                <DatePicker />
+                <DatePicker style={{ width: "100%" }} />
               </Form.Item>
             </Flex>
           </Form>

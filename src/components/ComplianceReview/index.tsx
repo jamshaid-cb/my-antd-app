@@ -5,6 +5,7 @@ import BackgroundChecks from "./BackgroundChecks";
 import CnicFront from "./CnicFront";
 import CnicBack from "./CnicBack";
 import FinancialDocs from "./FinancialDocs";
+import BusinessDetails from "./BusinessDetails";
 
 const { Content, Sider } = Layout;
 const { Text } = Typography;
@@ -117,6 +118,7 @@ const ComplianceReview: React.FC = () => {
             <Content>
               <Flex vertical gap={20}>
                 <BackgroundChecks />
+                <BusinessDetails />
                 <CnicFront />
                 <CnicBack />
                 <FinancialDocs />

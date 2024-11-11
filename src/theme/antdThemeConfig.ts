@@ -131,7 +131,7 @@ export const antdThemeConfig = {
 
     //Heights
     controlHeight: 40,
-    controlHeightLG: 48,
+    controlHeightLG: 40,
     controlHeightSM: 32,
 
     // Border radius
