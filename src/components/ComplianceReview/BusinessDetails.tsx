@@ -1,18 +1,5 @@
-import {
-  Input,
-  Button,
-  Card,
-  Row,
-  Col,
-  Divider,
-  Typography,
-  Flex,
-  Form,
-  Select,
-} from "antd";
-import { CheckCircleOutlined, SearchOutlined } from "@ant-design/icons";
-
-const { Text } = Typography;
+import { Input, Button, Card, Row, Col, Divider, Flex, Form } from "antd";
+import { SearchOutlined } from "@ant-design/icons";
 
 const BusinessDetails = () => {
   return (

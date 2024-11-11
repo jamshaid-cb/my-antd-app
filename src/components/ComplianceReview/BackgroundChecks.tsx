@@ -14,7 +14,6 @@ import {
   FileTextOutlined,
   UploadOutlined,
 } from "@ant-design/icons";
-import { useTheme } from "antd-style";
 
 const { Text } = Typography;
 
