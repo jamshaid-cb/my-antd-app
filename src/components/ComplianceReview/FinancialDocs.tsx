@@ -2,7 +2,7 @@ import { Button, Card, Row, Col, Divider, Typography, Flex } from "antd";
 import { CheckCircleOutlined } from "@ant-design/icons";
 
 import usePdfViewer from "../../hooks/usePdfViewer";
-import pdfFile from "../../assets/data.pdf";
+import pdfFile from "../../assets/sample.pdf";
 
 const { Text } = Typography;
 const FinancialDocs = () => {
