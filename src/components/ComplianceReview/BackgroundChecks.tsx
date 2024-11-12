@@ -76,7 +76,7 @@ const BackgroundChecks = () => {
                     style={{ color: "green", marginLeft: 8 }}
                   />
                 </Text>
-                <Tag color="success">{item.status}</Tag>
+                <Tag color="default">{item.status}</Tag>
                 <Text></Text>
               </List.Item>
             )}

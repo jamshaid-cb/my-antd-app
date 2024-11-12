@@ -144,6 +144,7 @@ export const antdThemeConfig = {
     linkHoverDecoration: "underline",
 
     // Spacing settings (for paddings/margins)
+    paddingXXS: 6,
     paddingXS: 6,
     paddingSM: 8,
     paddingMD: 12,
@@ -231,7 +232,10 @@ export const antdThemeConfig = {
       stickyScrollBarBg: palette.gray.light,
     },
 
-    Tag: {},
+    Tag: {
+      defaultBg: palette.white.main,
+      defaultColor: palette.black.main,
+    },
 
     Typography: {
       titleMarginTop: 15,

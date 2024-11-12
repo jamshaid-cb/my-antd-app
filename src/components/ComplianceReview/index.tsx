@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { HappyProvider } from "@ant-design/happy-work-theme";
 import { Anchor, Button, Drawer, Flex, Layout, theme, Typography } from "antd";
 import { createStyles } from "antd-style";
 import BackgroundChecks from "./BackgroundChecks";
@@ -21,9 +22,10 @@ const ComplianceReview: React.FC = () => {
   const [open, setOpen] = useState(false);
 
   const showDrawer = () => {
-    setOpen(true);
+    setTimeout(() => {
+      setOpen(true);
+    }, 500);
   };
-
   const onClose = () => {
     setOpen(false);
   };
@@ -34,7 +36,7 @@ const ComplianceReview: React.FC = () => {
     height: "100vh",
     position: "fixed",
     insetInlineStart: 0,
-    top: 73,
+    top: 65,
     bottom: 0,
     background: token?.palette?.white?.main,
     paddingBlock: "40px",
@@ -75,9 +77,11 @@ const ComplianceReview: React.FC = () => {
           alignItems: "center",
         }}
       >
-        <Button onClick={showDrawer} type="primary">
-          Review Compliance
-        </Button>
+        <HappyProvider>
+          <Button onClick={showDrawer} type="primary">
+            Review Compliance
+          </Button>
+        </HappyProvider>
       </div>
 
       {/* Drawer */}
@@ -88,16 +92,16 @@ const ComplianceReview: React.FC = () => {
         open={open}
         extra={
           <Flex gap={12}>
-            <Button type="text" onClick={onClose}>
+            <Button size="small" type="text" onClick={onClose}>
               Overall Decision
             </Button>
-            <Button type="primary" danger onClick={onClose}>
+            <Button size="small" type="primary" danger onClick={onClose}>
               Reject
             </Button>
-            <Button type="default" onClick={onClose}>
+            <Button size="small" type="default" onClick={onClose}>
               Request Resubmission
             </Button>
-            <Button type="primary" onClick={onClose}>
+            <Button size="small" type="primary" onClick={onClose}>
               Approve
             </Button>
           </Flex>

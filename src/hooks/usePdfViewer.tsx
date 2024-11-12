@@ -9,6 +9,7 @@ import {
   ZoomInOutlined,
   ZoomOutOutlined,
 } from "@ant-design/icons";
+import { theme } from "antd";
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.mjs`;
 
@@ -30,6 +31,11 @@ function usePdfViewer({
   const [numPages, setNumPages] = useState<number | null>(null);
   const [pageNumber, setPageNumber] = useState<number>(defaultPage);
   const [scale, setScale] = useState<number>(1);
+
+  const { token }: any = theme.useToken();
+  const primaryColor = token?.palette?.primary.main;
+
+  console.log(primaryColor);
 
   const onDocumentLoadSuccess = useCallback(
     ({ numPages }: any) => {
@@ -93,19 +99,39 @@ function usePdfViewer({
           }}
         >
           <LeftOutlined
+            style={{ color: primaryColor }}
             onClick={() => onPageChange(pageNumber - 1)}
             disabled={pageNumber <= 1}
           />
           <span>
-            Page {pageNumber} of {numPages || 1}
+            Page{" "}
+            <span
+              style={{
+                color: primaryColor,
+                background: "white",
+                border: "0.5px solid #cfcfcf",
+                borderRadius: "5px",
+                padding: "2px 7px",
+              }}
+            >
+              {pageNumber}
+            </span>{" "}
+            of {numPages || 1}
           </span>
           <RightOutlined
+            style={{ color: primaryColor }}
             onClick={() => onPageChange(pageNumber + 1)}
             disabled={numPages ? pageNumber >= numPages : false}
           />
           <hr style={{ height: "20px", width: "2px", marginInline: "0px" }} />
-          <ZoomInOutlined onClick={() => setScale((prev) => prev + 0.1)} />
-          <ZoomOutOutlined onClick={() => setScale((prev) => prev - 0.1)} />
+          <ZoomInOutlined
+            style={{ color: primaryColor }}
+            onClick={() => setScale((prev) => prev + 0.1)}
+          />
+          <ZoomOutOutlined
+            style={{ color: primaryColor }}
+            onClick={() => setScale((prev) => prev - 0.1)}
+          />
         </div>
       ),
     [onPageChange, pageNumber, numPages]
@@ -138,7 +164,7 @@ function usePdfViewer({
           <PageNum />
         </div>
       ),
-    [file, onDocumentLoadSuccess, pageNumber, scale]
+    [file, onDocumentLoadSuccess, pageNumber, scale, numPages]
   );
 
   return { PdfViewer, ControlBar, onPageChange };
