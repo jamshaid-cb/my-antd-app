@@ -120,7 +120,7 @@ const ComplianceReview: React.FC = () => {
             <Anchor
               onChange={(v: any) => setAnchor(v)}
               items={anchorItems}
-              getCurrentAnchor={(v) =>
+              getCurrentAnchor={() =>
                 anchor || window.location.hash || "#background-checks"
               }
             />
