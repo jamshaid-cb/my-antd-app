@@ -35,8 +35,6 @@ function usePdfViewer({
   const { token }: any = theme.useToken();
   const primaryColor = token?.palette?.primary.main;
 
-  console.log(primaryColor);
-
   const onDocumentLoadSuccess = useCallback(
     ({ numPages }: any) => {
       setNumPages(numPages);

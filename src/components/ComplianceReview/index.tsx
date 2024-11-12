@@ -17,9 +17,33 @@ const useStyle = createStyles(({ token }: any) => ({
   },
 }));
 
+const anchorItems = [
+  {
+    key: "1",
+    href: "#background-checks",
+    title: "Background Checks",
+  },
+  {
+    key: "2",
+    href: "#cnic-front",
+    title: "CNIC Front",
+  },
+  {
+    key: "3",
+    href: "#cnic-back",
+    title: "CNIC Back",
+  },
+  {
+    key: "4",
+    href: "#financial-documents",
+    title: "Financial Documents",
+  },
+];
+
 const ComplianceReview: React.FC = () => {
   const { token }: any = theme.useToken();
   const [open, setOpen] = useState(false);
+  const [anchor, setAnchor] = useState<string>(window.location.hash);
 
   const showDrawer = () => {
     setTimeout(() => {
@@ -42,29 +66,6 @@ const ComplianceReview: React.FC = () => {
     paddingBlock: "40px",
     paddingLeft: "30px",
   };
-
-  const anchorItems = [
-    {
-      key: "1",
-      href: "#background-checks",
-      title: "Background Checks",
-    },
-    {
-      key: "2",
-      href: "#cnic-front",
-      title: "CNIC Front",
-    },
-    {
-      key: "3",
-      href: "#cnic-back",
-      title: "CNIC Back",
-    },
-    {
-      key: "4",
-      href: "#financial-documents",
-      title: "Financial Documents",
-    },
-  ];
 
   return (
     <>
@@ -116,7 +117,13 @@ const ComplianceReview: React.FC = () => {
             >
               Checklist
             </Text>
-            <Anchor items={anchorItems} />
+            <Anchor
+              onChange={(v: any) => setAnchor(v)}
+              items={anchorItems}
+              getCurrentAnchor={(v) =>
+                anchor || window.location.hash || "#background-checks"
+              }
+            />
           </Sider>
           <Layout style={{ marginInlineStart: 240 }}>
             <Content>
