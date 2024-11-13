@@ -13,7 +13,7 @@ import {
 import { CheckCircleOutlined } from "@ant-design/icons";
 
 const { Text } = Typography;
-import CNIC from "../../assets/cnic.jpg";
+import CNIC from "../../assets/cnic.jpeg";
 
 const CnicBack = () => {
   return (
@@ -30,22 +30,31 @@ const CnicBack = () => {
       }
     >
       <Row gutter={[16, 16]}>
-        <Col span={12}>
+        <Col
+          span={12}
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "space-between",
+          }}
+        >
           <Form layout="vertical">
             <Form.Item label="CNIC Address">
               <Input.TextArea placeholder="Enter CNIC Address" rows={4} />
             </Form.Item>
           </Form>
+          <div>
+            <Divider />
+            <Button type="primary" style={{ marginRight: 10 }}>
+              Accept
+            </Button>
+            <Button type="default">Reject</Button>
+          </div>
         </Col>
         <Col span={12}>
           <Image src={CNIC} />
         </Col>
       </Row>
-      <Divider />
-      <Button type="primary" style={{ marginRight: 10 }}>
-        Accept
-      </Button>
-      <Button type="default">Reject</Button>
     </Card>
   );
 };

@@ -16,6 +16,7 @@ pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/b
 interface UsePdfViewerProps {
   file: string | File | Blob;
   defaultPage?: number;
+  height?: string;
 }
 
 interface UsePdfViewerReturn {
@@ -27,10 +28,11 @@ interface UsePdfViewerReturn {
 function usePdfViewer({
   file,
   defaultPage = 1,
+  height = "500px",
 }: UsePdfViewerProps): UsePdfViewerReturn {
   const [numPages, setNumPages] = useState<number | null>(null);
   const [pageNumber, setPageNumber] = useState<number>(defaultPage);
-  const [scale, setScale] = useState<number>(1);
+  const [scale, setScale] = useState<number>(1.4);
 
   const { token }: any = theme.useToken();
   const primaryColor = token?.palette?.primary.main;
@@ -150,7 +152,7 @@ function usePdfViewer({
             style={{
               display: "flex",
               justifyContent: "center",
-              height: "500px",
+              height,
               width: "100%",
               overflow: "auto",
             }}
